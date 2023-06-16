@@ -213,9 +213,7 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
-      - - {x: 0, y: 3}
-        - {x: -3, y: 0}
-        - {x: -3, y: -3}
+      - - {x: -3, y: -3}
         - {x: 3, y: -3}
         - {x: 3, y: 3}
       tessellationDetail: 0
@@ -242,8 +240,6 @@ TextureImporter:
       - - {x: -3, y: 3}
         - {x: -3, y: -3}
         - {x: 3, y: -3}
-        - {x: 3, y: 0}
-        - {x: 0, y: 3}
       tessellationDetail: 0
       bones: []
       spriteID: 7c57f92404b04a540a62bc4b0f65724f
@@ -266,8 +262,6 @@ TextureImporter:
       outline: []
       physicsShape:
       - - {x: -3, y: 3}
-        - {x: -3, y: 0}
-        - {x: 0, y: -3}
         - {x: 3, y: -3}
         - {x: 3, y: 3}
       tessellationDetail: 0
@@ -293,8 +287,6 @@ TextureImporter:
       physicsShape:
       - - {x: -3, y: 3}
         - {x: -3, y: -3}
-        - {x: 0, y: -3}
-        - {x: 3, y: 0}
         - {x: 3, y: 3}
       tessellationDetail: 0
       bones: []
@@ -318,10 +310,8 @@ TextureImporter:
       outline: []
       physicsShape:
       - - {x: 0, y: 3}
-        - {x: -3, y: 1}
         - {x: -3, y: -3}
         - {x: 3, y: -3}
-        - {x: 3, y: 1}
       tessellationDetail: 0
       bones: []
       spriteID: ab91afdaa13b99843b1ced8a65cb7bab
@@ -345,9 +335,7 @@ TextureImporter:
       physicsShape:
       - - {x: -3, y: 3}
         - {x: -3, y: -3}
-        - {x: 1, y: -3}
         - {x: 3, y: 0}
-        - {x: 1, y: 3}
       tessellationDetail: 0
       bones: []
       spriteID: 5b84accedfe35904a8c213e9129b4677
@@ -370,9 +358,7 @@ TextureImporter:
       outline: []
       physicsShape:
       - - {x: -3, y: 3}
-        - {x: -3, y: -1}
         - {x: 0, y: -3}
-        - {x: 3, y: -1}
         - {x: 3, y: 3}
       tessellationDetail: 0
       bones: []
@@ -395,9 +381,7 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
-      - - {x: -1, y: 3}
-        - {x: -3, y: 0}
-        - {x: -1, y: -3}
+      - - {x: -3, y: 0}
         - {x: 3, y: -3}
         - {x: 3, y: 3}
       tessellationDetail: 0
