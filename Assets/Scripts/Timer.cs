@@ -96,9 +96,4 @@ public class Timer : MonoBehaviour
         playerController.isGameOver = true;
         Time.timeScale = 0f;
     }
-
-    public void AddTime(float extraTime)
-    {
-        currentTime += extraTime;
-    }
 }

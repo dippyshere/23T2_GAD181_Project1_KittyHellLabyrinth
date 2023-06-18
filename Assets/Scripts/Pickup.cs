@@ -4,20 +4,36 @@ using UnityEngine;
 
 public class Pickup : MonoBehaviour
 {
-    public float extraTime = 3f; // Amount of time to add when picked up
+    private Timer timer;
 
-    public void OnTriggerEnter(Collider other)
+    private bool isActive = true;
+
+    private void Start()
     {
-        if (other.CompareTag("Player"))
-        {
-            Timer timer = other.GetComponent<Timer>(); // Assuming you have a Timer script attached to the player
+        timer = GameObject.FindWithTag("Timer").GetComponent<Timer>();
+    }
 
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player") && isActive)
+        {
             if (timer != null)
             {
-                timer.AddTime(extraTime); // Call a method in your Timer script to add the extra time
-            }
+                timer.currentTime = timer.totalTime;
 
-            Destroy(gameObject); // Destroy the pickup object after it's been collected
+                StartCoroutine(Respawn());
+            }
         }
+    }
+
+    private IEnumerator Respawn()
+    {
+        isActive = false;
+        gameObject.GetComponent<SpriteRenderer>().enabled = false;
+
+        yield return new WaitForSeconds(Random.Range(7, 15));
+
+        gameObject.GetComponent<SpriteRenderer>().enabled = true;
+        isActive = true;
     }
 }
