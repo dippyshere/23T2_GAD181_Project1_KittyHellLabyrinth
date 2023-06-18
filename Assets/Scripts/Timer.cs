@@ -13,8 +13,11 @@ public class Timer : MonoBehaviour
     public Image timerImage;
     public List<Sprite> timerSprites;
 
+    public PlayerController playerController;
+
     private void Start()
     {
+        playerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
         // Start the timer
         StartTimer();
     }
@@ -88,9 +91,10 @@ public class Timer : MonoBehaviour
 
     private void GameOver()
     {
-        // Implement game over logic here
-        Debug.Log("Game Over");
-        // You can restart the game, display a game over screen, or perform any other desired actions
+        //Debug.Log("Game Over");
+
+        playerController.isGameOver = true;
+        Time.timeScale = 0f;
     }
 
     public void AddTime(float extraTime)

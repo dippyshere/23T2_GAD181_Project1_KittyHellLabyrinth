@@ -8,10 +8,20 @@ public class Attack : MonoBehaviour
     public float rotationSpeed = 5f;
     public float distanceFromPlayer = 2f;
 
+    private PlayerController playerController;
+
+    private void Start()
+    {
+        playerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
+    }
+
     // Update is called once per frame
     void Update()
     {
-        Rotate();
+        if (!playerController.isGameOver)
+        {
+            Rotate();
+        }
     }
 
     private void Rotate()

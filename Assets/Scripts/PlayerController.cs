@@ -14,6 +14,11 @@ public class PlayerController : MonoBehaviour
     private float vertical;
     private float horizontal;
 
+    // Health Variables
+    [Header("Health Settings")]
+    public bool isGameOver;
+    [SerializeField] private int lives;
+
     // Start is called before the first frame update
     void Start()
     {
