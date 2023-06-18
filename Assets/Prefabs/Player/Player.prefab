@@ -204,7 +204,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 5
   isGameOver: 0
-  lives: 0
+  lives: 3
+  leftEar: {fileID: 1115693309707052135}
+  rightEar: {fileID: 1115693309139114070}
+  eyes: {fileID: 1115693309581490148}
+  mouth: {fileID: 1115693307917170217}
+  eyePain: {fileID: 610797808, guid: 796ab609ce2be004ab5a26ce571bc6a9, type: 3}
+  mouthPain: {fileID: -1960027481, guid: e499d781c66c9e7468856a2d8ea413ed, type: 3}
+  Animator: {fileID: 1115693309296107021}
 --- !u!50 &3996812261141309800
 Rigidbody2D:
   serializedVersion: 4
@@ -317,8 +324,33 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6a7930c85f9a53419f6d04a9c2f8228, type: 3}
+--- !u!212 &1115693307917170217 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 4038667510659184231, guid: c6a7930c85f9a53419f6d04a9c2f8228, type: 3}
+  m_PrefabInstance: {fileID: 3996812259785343054}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &1115693309139114070 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 4038667511886698520, guid: c6a7930c85f9a53419f6d04a9c2f8228, type: 3}
+  m_PrefabInstance: {fileID: 3996812259785343054}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1115693309296107020 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4038667511966817858, guid: c6a7930c85f9a53419f6d04a9c2f8228, type: 3}
+  m_PrefabInstance: {fileID: 3996812259785343054}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1115693309296107021 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4038667511966817859, guid: c6a7930c85f9a53419f6d04a9c2f8228, type: 3}
+  m_PrefabInstance: {fileID: 3996812259785343054}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &1115693309581490148 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 4038667512249644970, guid: c6a7930c85f9a53419f6d04a9c2f8228, type: 3}
+  m_PrefabInstance: {fileID: 3996812259785343054}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &1115693309707052135 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 4038667512377828393, guid: c6a7930c85f9a53419f6d04a9c2f8228, type: 3}
   m_PrefabInstance: {fileID: 3996812259785343054}
   m_PrefabAsset: {fileID: 0}

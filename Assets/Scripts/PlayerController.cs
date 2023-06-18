@@ -19,6 +19,16 @@ public class PlayerController : MonoBehaviour
     public bool isGameOver;
     [SerializeField] private int lives;
 
+    // Sprite elements because im really tired and lazy aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+    [Header("Sprite Elements aaaaaa")]
+    public SpriteRenderer leftEar;
+    public SpriteRenderer rightEar;
+    public SpriteRenderer eyes;
+    public SpriteRenderer mouth;
+    public Sprite eyePain;
+    public Sprite mouthPain;
+    public Animator Animator;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,4 +47,34 @@ public class PlayerController : MonoBehaviour
     {
         rb.velocity = new Vector2(horizontal * movementSpeed, vertical * movementSpeed); // Move the player
     }
-}
+
+    public void takeDamage()
+    {
+        lives -= 1;
+        switch (lives)
+        {
+            case 0:
+                // Game Over
+                isGameOver = true;
+                break;
+            case 1:
+                // Change sprite to 0 lifes
+                rightEar.enabled = false;
+                break;
+            case 2:
+                // Change sprite to 1 live
+                leftEar.enabled = false;
+                Animator.SetTrigger("hurt");
+                break;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            takeDamage();
+            collision.gameObject.GetComponent<EnemyController>().HandleCollisionWithPlayer();
+        }
+    }
+    }

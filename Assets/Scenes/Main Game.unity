@@ -10107,6 +10107,10 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1302146395}
+    - target: {fileID: 8963846976981844576, guid: f624fb24bc5b0ff47aa23974f2bb20e9, type: 3}
+      propertyPath: deathParticles
+      value: 
+      objectReference: {fileID: 1867168237438559539, guid: 947a1b699ffaa7f479973a794b181641, type: 3}
     - target: {fileID: 8963846976981844578, guid: f624fb24bc5b0ff47aa23974f2bb20e9, type: 3}
       propertyPath: m_RootOrder
       value: 19
