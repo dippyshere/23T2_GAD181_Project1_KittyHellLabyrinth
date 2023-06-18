@@ -4,6 +4,7 @@ public class EnemyController : MonoBehaviour
 {
     public float speed = 5f;
     public Transform target;
+    public GameObject deathParticles;
 
     private Pathfinding pathfinding;
     private Vector3Int[] path;
@@ -46,41 +47,43 @@ public class EnemyController : MonoBehaviour
 
     private void HandleTargetReached()
     {
-        // Implement the logic for what happens when the enemy reaches the target position
-        // For example, you could destroy the enemy, apply damage to the player, etc.
-        // Here, we will check for collision with the player using CircleCollider2D and BoxCollider2D
-
         // Get the player GameObject (assuming it has a "Player" tag)
         GameObject player = GameObject.FindGameObjectWithTag("Player");
 
+        // Retrieve the PlayerController component from the player GameObject
+        PlayerController playerController = player.GetComponent<PlayerController>();
+
         // Check if the enemy has collided with the player
-        if (player != null)
+        if (playerController != null)
         {
-            CircleCollider2D playerCollider = player.GetComponent<CircleCollider2D>();
+            CircleCollider2D playerCollider = playerController.GetComponent<CircleCollider2D>();
             BoxCollider2D enemyCollider = GetComponent<BoxCollider2D>();
 
             // Check if the player's collider overlaps with the enemy's collider
             if (playerCollider.IsTouching(enemyCollider))
             {
                 // Handle the collision (e.g., apply damage to the player)
-                HandleCollisionWithPlayer(player);
+                HandleCollisionWithPlayer();
             }
             else
             {
                 // Calculate a new path to the player's current position
                 Vector3Int startPosition = Vector3Int.FloorToInt(transform.position);
-                CalculatePath(startPosition, player.transform);
+                CalculatePath(startPosition, playerController.transform);
             }
         }
     }
 
 
-    private void HandleCollisionWithPlayer(GameObject player)
+
+    public void HandleCollisionWithPlayer()
     {
         // Implement the logic for what happens when the enemy collides with the player
         // For example, you could apply damage to the player, trigger a game over, etc.
         
         Debug.Log("Player collided with enemy!");
+        Instantiate(deathParticles, transform.position, Quaternion.identity);
+        Destroy(gameObject);
     }
 
 
