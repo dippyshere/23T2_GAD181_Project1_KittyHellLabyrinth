@@ -1,33 +1,99 @@
 using UnityEngine;
-using UnityEngine.Tilemaps;
 
 public class EnemyController : MonoBehaviour
 {
-    public Transform target;  // The player's position or the destination the enemy is trying to reach
-    public Tilemap tilemap;  // Reference to the Tilemap component representing the maze
+    public float speed = 5f;
+    public Transform target;
 
-    public Pathfinding pathfinding;  // Reference to a Pathfinding script implementing the A* algorithm
+    private Pathfinding pathfinding;
+    private Vector3Int[] path;
+    private int currentPathIndex = 0;
+
+    private void Awake()
+    {
+        pathfinding = GetComponent<Pathfinding>();
+    }
+
+    private void Start()
+    {
+        Vector3Int startPosition = Vector3Int.FloorToInt(transform.position);
+        CalculatePath(startPosition, target);
+    }
 
     private void Update()
     {
-        if (pathfinding != null)
+        if (path == null || currentPathIndex >= path.Length)
+            return;
+
+        Vector3 targetPosition = pathfinding.tilemap.GetCellCenterWorld(path[currentPathIndex]);
+
+        // Move the enemy towards the target position
+        transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
+
+        // Check if the enemy has reached the current target position
+        if (transform.position == targetPosition)
         {
-            // Calculate the path from the enemy's current position to the target position
-            Vector3Int startTile = tilemap.WorldToCell(transform.position);
-            Vector3Int targetTile = tilemap.WorldToCell(target.position);
-            Vector3Int[] path = pathfinding.FindPath(startTile, targetTile);
+            currentPathIndex++;
 
-            Debug.Log(path);
-
-            // Move the enemy along the calculated path
-            if (path != null && path.Length > 0)
+            // Check if the enemy has reached the final target position
+            if (currentPathIndex >= path.Length)
             {
-                Debug.Log(path[0]);
-                Vector3 targetPosition = tilemap.GetCellCenterWorld(path[0]);
-                Vector2 movementDirection = (targetPosition - transform.position).normalized;
-                // Apply movement to the Rigidbody2D
-                // You can use methods like AddForce, velocity, or transform.Translate to move the enemy
+                // Handle reaching the target (e.g., attack, destroy, etc.)
+                HandleTargetReached();
             }
         }
+    }
+
+    private void HandleTargetReached()
+    {
+        // Implement the logic for what happens when the enemy reaches the target position
+        // For example, you could destroy the enemy, apply damage to the player, etc.
+        // Here, we will check for collision with the player using CircleCollider2D and BoxCollider2D
+
+        // Get the player GameObject (assuming it has a "Player" tag)
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+
+        // Check if the enemy has collided with the player
+        if (player != null)
+        {
+            CircleCollider2D playerCollider = player.GetComponent<CircleCollider2D>();
+            BoxCollider2D enemyCollider = GetComponent<BoxCollider2D>();
+
+            // Check if the player's collider overlaps with the enemy's collider
+            if (playerCollider.IsTouching(enemyCollider))
+            {
+                // Handle the collision (e.g., apply damage to the player)
+                HandleCollisionWithPlayer(player);
+            }
+            else
+            {
+                // Calculate a new path to the player's current position
+                Vector3Int startPosition = Vector3Int.FloorToInt(transform.position);
+                CalculatePath(startPosition, player.transform);
+            }
+        }
+    }
+
+
+    private void HandleCollisionWithPlayer(GameObject player)
+    {
+        // Implement the logic for what happens when the enemy collides with the player
+        // For example, you could apply damage to the player, trigger a game over, etc.
+        
+        Debug.Log("Player collided with enemy!");
+    }
+
+
+
+    private void CalculatePath(Vector3Int startPosition, Transform targetTransform)
+    {
+        Vector3Int targetPosition = Vector3Int.FloorToInt(targetTransform.position);
+        CalculatePath(startPosition, targetPosition);
+    }
+
+    private void CalculatePath(Vector3Int startPosition, Vector3Int targetPosition)
+    {
+        path = pathfinding.FindPath(startPosition, targetPosition);
+        currentPathIndex = 0;
     }
 }
