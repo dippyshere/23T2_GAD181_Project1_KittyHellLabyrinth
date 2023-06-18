@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -19,8 +20,8 @@ public class PlayerController : MonoBehaviour
     public bool isGameOver;
     [SerializeField] private int lives;
 
-    // Sprite elements because im really tired and lazy aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-    [Header("Sprite Elements aaaaaa")]
+    // Sprite elements
+    [Header("Sprite Elements")]
     public SpriteRenderer leftEar;
     public SpriteRenderer rightEar;
     public SpriteRenderer eyes;
@@ -29,6 +30,11 @@ public class PlayerController : MonoBehaviour
     public Sprite mouthPain;
     public Animator Animator;
     public GameObject ear;
+
+    private void Awake()
+    {
+        Time.timeScale = 1f;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -42,6 +48,14 @@ public class PlayerController : MonoBehaviour
         // Movement input
         vertical = Input.GetAxisRaw("Vertical");
         horizontal = Input.GetAxisRaw("Horizontal");
+
+        if (isGameOver)
+        {
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            }
+        }
     }
 
     private void FixedUpdate()
@@ -57,6 +71,7 @@ public class PlayerController : MonoBehaviour
             case 0:
                 // Game Over
                 isGameOver = true;
+                Time.timeScale = 0f;
                 break;
             case 1:
                 // Change sprite to 0 lifes
@@ -74,10 +89,10 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag("Enemy") && !this.gameObject.CompareTag("Sword"))
         {
             takeDamage();
             collision.gameObject.GetComponent<EnemyController>().HandleCollisionWithPlayer();
         }
     }
-    }
+}

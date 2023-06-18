@@ -18,6 +18,7 @@ public class EnemyController : MonoBehaviour
     private void Start()
     {
         Vector3Int startPosition = Vector3Int.FloorToInt(transform.position);
+        target = GameObject.FindWithTag("Player").GetComponent<Transform>();
         CalculatePath(startPosition, target);
     }
 
@@ -81,7 +82,7 @@ public class EnemyController : MonoBehaviour
         // Implement the logic for what happens when the enemy collides with the player
         // For example, you could apply damage to the player, trigger a game over, etc.
         
-        Debug.Log("Player collided with enemy!");
+        //Debug.Log("Player collided with enemy!");
         Instantiate(deathParticles, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }

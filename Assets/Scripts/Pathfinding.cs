@@ -12,6 +12,8 @@ public class Pathfinding : MonoBehaviour
 
     private void Awake()
     {
+        tilemap = GameObject.Find("Tilemap").GetComponent<Tilemap>();
+
         // Generate nodes for each walkable tile in the tilemap
         BoundsInt bounds = tilemap.cellBounds;
         TileBase[] tiles = tilemap.GetTilesBlock(bounds);

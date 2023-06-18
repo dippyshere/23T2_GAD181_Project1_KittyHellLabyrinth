@@ -6,7 +6,7 @@ using TMPro;
 
 public class ScoreController : MonoBehaviour
 {
-    private float timeAlive;
+    [HideInInspector] public float timeAlive;
     private PlayerController playerController;
 
     [SerializeField] private TextMeshProUGUI score;

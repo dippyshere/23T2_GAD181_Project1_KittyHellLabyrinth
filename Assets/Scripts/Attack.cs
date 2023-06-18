@@ -53,4 +53,16 @@ public class Attack : MonoBehaviour
         mousePosition.z = -Camera.main.transform.position.z;
         return Camera.main.ScreenToWorldPoint(mousePosition);
     }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            if (Input.GetKeyDown(KeyCode.Mouse0))
+            {
+                collision.gameObject.GetComponent<EnemyController>().HandleCollisionWithPlayer();
+                GameObject.FindWithTag("Player").GetComponent<ScoreController>().timeAlive += 5f; // Increases player score upon enemy kill
+            }
+        }
+    }
 }
