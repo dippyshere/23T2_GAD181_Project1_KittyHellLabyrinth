@@ -10030,6 +10030,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3996812259862914025, guid: db2b56a72fbd9224294276aaf30be31f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3996812259862914025, guid: db2b56a72fbd9224294276aaf30be31f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3996812259862914027, guid: db2b56a72fbd9224294276aaf30be31f, type: 3}
+      propertyPath: distanceFromPlayer
+      value: 1.25
+      objectReference: {fileID: 0}
     - target: {fileID: 3996812261141309803, guid: db2b56a72fbd9224294276aaf30be31f, type: 3}
       propertyPath: score
       value: 
