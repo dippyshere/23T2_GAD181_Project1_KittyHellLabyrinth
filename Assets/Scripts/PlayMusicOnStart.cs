@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Jobs;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -35,22 +36,25 @@ public class PlayMusicOnStart : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        // Check if the new scene is the gameplay scene
-        if (scene.name == "Main Game")
+        if (audioSource != null && audioSource.clip != null)
         {
-            // Set the in-game music clip
-            audioSource.clip = inGameMusic;
+            // Check if the new scene is the gameplay scene
+            if (scene.name == "Main Game")
+            {
+                // Set the in-game music clip
+                audioSource.clip = inGameMusic;
 
-            // Play the in-game music
-            audioSource.Play();
-        }
-        else
-        {
-            // Set the menu music clip
-            audioSource.clip = menuMusic;
+                // Play the in-game music
+                audioSource.Play();
+            }
+            else
+            {
+                // Set the menu music clip
+                audioSource.clip = menuMusic;
 
-            // Play the menu music for any other scene
-            audioSource.Play();
+                // Play the menu music for any other scene
+                audioSource.Play();
+            }
         }
     }
 }
