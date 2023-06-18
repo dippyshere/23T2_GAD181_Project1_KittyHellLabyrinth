@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 3996812259862914024}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3996812261141309807}
@@ -99,7 +99,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 3996812261141309807}
   rotationSpeed: 9999
-  distanceFromPlayer: 1
+  distanceFromPlayer: 1.25
 --- !u!1 &3996812261141309804
 GameObject:
   m_ObjectHideFlags: 0
@@ -212,6 +212,7 @@ MonoBehaviour:
   eyePain: {fileID: 610797808, guid: 796ab609ce2be004ab5a26ce571bc6a9, type: 3}
   mouthPain: {fileID: -1960027481, guid: e499d781c66c9e7468856a2d8ea413ed, type: 3}
   Animator: {fileID: 1115693309296107021}
+  ear: {fileID: 9026145550503255711, guid: a3f0ad306ed64204faf0145ea119897e, type: 3}
 --- !u!50 &3996812261141309800
 Rigidbody2D:
   serializedVersion: 4

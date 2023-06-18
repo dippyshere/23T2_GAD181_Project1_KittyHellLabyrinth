@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour
     public Sprite eyePain;
     public Sprite mouthPain;
     public Animator Animator;
+    public GameObject ear;
 
     // Start is called before the first frame update
     void Start()
@@ -60,11 +61,13 @@ public class PlayerController : MonoBehaviour
             case 1:
                 // Change sprite to 0 lifes
                 rightEar.enabled = false;
+                Instantiate(ear, transform.position, Quaternion.identity);
                 break;
             case 2:
                 // Change sprite to 1 live
                 leftEar.enabled = false;
                 Animator.SetTrigger("hurt");
+                Instantiate(ear, transform.position, Quaternion.identity);
                 break;
         }
     }
