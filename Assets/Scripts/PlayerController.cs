@@ -51,7 +51,7 @@ public class PlayerController : MonoBehaviour
 
         if (isGameOver)
         {
-            if (Input.GetKeyDown(KeyCode.R))
+            if (Input.GetKeyDown(KeyCode.Tab))
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }

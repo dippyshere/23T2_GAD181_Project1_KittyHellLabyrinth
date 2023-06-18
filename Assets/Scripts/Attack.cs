@@ -8,6 +8,9 @@ public class Attack : MonoBehaviour
     public float rotationSpeed = 5f;
     public float distanceFromPlayer = 2f;
 
+    private bool isCheckingForInput = false;
+    private GameObject enemyCollision;
+
     private PlayerController playerController;
 
     private void Start()
@@ -21,6 +24,15 @@ public class Attack : MonoBehaviour
         if (!playerController.isGameOver)
         {
             Rotate();
+        }
+
+        if (isCheckingForInput)
+        {
+            if (Input.GetKeyDown(KeyCode.Mouse0))
+            {
+                enemyCollision.GetComponent<EnemyController>().HandleCollisionWithPlayer();
+                GameObject.FindWithTag("Player").GetComponent<ScoreController>().timeAlive += 5f; // Increases player score upon enemy kill
+            }
         }
     }
 
@@ -54,15 +66,21 @@ public class Attack : MonoBehaviour
         return Camera.main.ScreenToWorldPoint(mousePosition);
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            if (Input.GetKeyDown(KeyCode.Mouse0))
-            {
-                collision.gameObject.GetComponent<EnemyController>().HandleCollisionWithPlayer();
-                GameObject.FindWithTag("Player").GetComponent<ScoreController>().timeAlive += 5f; // Increases player score upon enemy kill
-            }
+            enemyCollision = collision.gameObject;
+            isCheckingForInput = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            enemyCollision = null;
+            isCheckingForInput = false;
         }
     }
 }
