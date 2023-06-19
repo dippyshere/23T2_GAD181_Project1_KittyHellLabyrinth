@@ -66,6 +66,7 @@ public class PlayerController : MonoBehaviour
     public void takeDamage()
     {
         lives -= 1;
+        Camera.main.GetComponent<CameraFollow>().StartCoroutine(Camera.main.GetComponent<CameraFollow>().ShakeCamera(0.3f, 0.4f));
         switch (lives)
         {
             case 0:
