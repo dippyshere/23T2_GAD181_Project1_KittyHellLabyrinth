@@ -5,7 +5,6 @@ public class EarController : MonoBehaviour
     public float upwardForce = 5f;
     public float forwardForce = -1f;
     public float torqueForce = 2f;
-    public float stopDelay = 1f;
 
     private Rigidbody2D rb;
 
@@ -26,7 +25,7 @@ public class EarController : MonoBehaviour
 
     private System.Collections.IEnumerator StopSpriteAfterDelay()
     {
-        yield return new WaitForSeconds(stopDelay);
+        yield return new WaitForSeconds(Random.Range(0.9f, 1.5f));
         rb.simulated = false;
     }
 }
