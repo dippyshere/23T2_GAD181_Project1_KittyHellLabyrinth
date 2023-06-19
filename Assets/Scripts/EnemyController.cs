@@ -58,7 +58,7 @@ public class EnemyController : MonoBehaviour
         if (playerController != null)
         {
             CircleCollider2D playerCollider = playerController.GetComponent<CircleCollider2D>();
-            BoxCollider2D enemyCollider = GetComponent<BoxCollider2D>();
+            CircleCollider2D enemyCollider = GetComponent<CircleCollider2D>();
 
             // Check if the player's collider overlaps with the enemy's collider
             if (playerCollider.IsTouching(enemyCollider))
