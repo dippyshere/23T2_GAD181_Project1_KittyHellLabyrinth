@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fcb71955785551245896cbcb12a08ccf
+guid: 8e0a4c423baac0e4aae52da2e8ef6488
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 6
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -70,7 +70,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -117,211 +117,319 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: New Piskel (3)_0
+      name: walls4_0
       rect:
         serializedVersion: 2
-        x: 318
-        y: 3614
-        width: 196
-        height: 196
+        x: 0
+        y: 18
+        width: 6
+        height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 15a274fa7714a284ab108c6267c149c7
-      internalID: -365815538
+      spriteID: c143c1a0c00c73a499f3d334b565675f
+      internalID: 2075252222
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: New Piskel (3)_1
+      name: walls4_1
       rect:
         serializedVersion: 2
-        x: 1342
-        y: 3614
-        width: 196
-        height: 196
+        x: 6
+        y: 18
+        width: 6
+        height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ec343f5a212d2c84285339e82844e718
-      internalID: -789877220
+      spriteID: 81ef3cd467cff6e4a82c6b421e7c27b9
+      internalID: -468825427
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: New Piskel (3)_2
+      name: walls4_2
       rect:
         serializedVersion: 2
-        x: 2366
-        y: 3614
-        width: 196
-        height: 196
+        x: 12
+        y: 18
+        width: 6
+        height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6c4d057fb813bd645a4e11ed322713e3
-      internalID: 1706380215
+      spriteID: 42c7eab0c93761e40a449996098c2699
+      internalID: -868326408
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: New Piskel (3)_3
+      name: walls4_3
       rect:
         serializedVersion: 2
-        x: 318
-        y: 2590
-        width: 196
-        height: 196
+        x: 18
+        y: 18
+        width: 6
+        height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cfd8e9d009f53bc409f421e6a75b8006
-      internalID: -121884810
+      spriteID: 8995949daada02940983121d62b5de37
+      internalID: 825188884
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: New Piskel (3)_4
+      name: walls4_4
       rect:
         serializedVersion: 2
-        x: 1342
-        y: 2590
-        width: 196
-        height: 196
+        x: 0
+        y: 12
+        width: 6
+        height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6af192f9ed073a34f9c297f294c115af
-      internalID: -1060108182
+      spriteID: 761a3d0947a98eb488382ae14dbe764b
+      internalID: -121296805
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: New Piskel (3)_5
+      name: walls4_5
       rect:
         serializedVersion: 2
-        x: 2366
-        y: 2590
-        width: 196
-        height: 196
+        x: 6
+        y: 12
+        width: 6
+        height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 89bba6f1523e1ac46baa4026b357134b
-      internalID: -1385697736
+      spriteID: b6ce7c4a3c26e7d45a3619e1a8f27d4f
+      internalID: -169329969
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: New Piskel (3)_6
+      name: walls4_6
       rect:
         serializedVersion: 2
-        x: 318
-        y: 1566
-        width: 196
-        height: 196
+        x: 12
+        y: 12
+        width: 6
+        height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -3, y: -3}
+        - {x: 3, y: -3}
+        - {x: 3, y: 3}
       tessellationDetail: 0
       bones: []
-      spriteID: 4fae990bcd1dbf4429855565e6ce5eaa
-      internalID: 83612460
+      spriteID: 6a3981b8bc8e586438aad47658438826
+      internalID: -2019816321
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: New Piskel (3)_7
+      name: walls4_7
       rect:
         serializedVersion: 2
-        x: 1342
-        y: 1566
-        width: 196
-        height: 196
+        x: 18
+        y: 12
+        width: 6
+        height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -3, y: 3}
+        - {x: -3, y: -3}
+        - {x: 3, y: -3}
       tessellationDetail: 0
       bones: []
-      spriteID: c1fe0dc00f06ffe40b1767281a62637b
-      internalID: 1665264141
+      spriteID: cb8ebb5bab804854a99ccb8c70f2a4ca
+      internalID: 2127102419
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: New Piskel (3)_8
+      name: walls4_8
       rect:
         serializedVersion: 2
-        x: 2366
-        y: 1566
-        width: 196
-        height: 196
+        x: 0
+        y: 6
+        width: 6
+        height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -3, y: 3}
+        - {x: 3, y: -3}
+        - {x: 3, y: 3}
       tessellationDetail: 0
       bones: []
-      spriteID: 5a33e90d83a8e344a90a31076ab86eca
-      internalID: 2099025845
+      spriteID: b870f4d43d3200c48801c8933c59858d
+      internalID: 1313170199
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: New Piskel (3)_9
+      name: walls4_9
       rect:
         serializedVersion: 2
-        x: 318
-        y: 542
-        width: 196
-        height: 196
+        x: 6
+        y: 6
+        width: 6
+        height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -3, y: 3}
+        - {x: -3, y: -3}
+        - {x: 3, y: 3}
       tessellationDetail: 0
       bones: []
-      spriteID: f9e9983e2826e03419b16259637a1c6a
-      internalID: 503192682
+      spriteID: c1019a4744b77d044817530064fd8821
+      internalID: 1948386138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walls4_10
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 6
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -3, y: -3}
+        - {x: 3, y: -3}
+        - {x: 0, y: 3}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1316c3f5bb83fbb4dae832ea23dde11b
+      internalID: 2107305333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walls4_11
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 6
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -3, y: 3}
+        - {x: -3, y: -3}
+        - {x: 3, y: 0}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b40fff6aae569647b7a636827a1c97f
+      internalID: -771808411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walls4_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -3, y: 3}
+        - {x: 0, y: -3}
+        - {x: 3, y: 3}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 734d21adcb2129641a84e08ede8610e9
+      internalID: -1615823537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walls4_13
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 0
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -3, y: 0}
+        - {x: 3, y: -3}
+        - {x: 3, y: 3}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9345e01897b1512498cd6dc7d8d4814c
+      internalID: -1116686164
       vertices: []
       indices: 
       edges: []
@@ -337,16 +445,20 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      New Piskel (3)_0: -365815538
-      New Piskel (3)_1: -789877220
-      New Piskel (3)_2: 1706380215
-      New Piskel (3)_3: -121884810
-      New Piskel (3)_4: -1060108182
-      New Piskel (3)_5: -1385697736
-      New Piskel (3)_6: 83612460
-      New Piskel (3)_7: 1665264141
-      New Piskel (3)_8: 2099025845
-      New Piskel (3)_9: 503192682
+      walls4_0: 2075252222
+      walls4_1: -468825427
+      walls4_10: 2107305333
+      walls4_11: -771808411
+      walls4_12: -1615823537
+      walls4_13: -1116686164
+      walls4_2: -868326408
+      walls4_3: 825188884
+      walls4_4: -121296805
+      walls4_5: -169329969
+      walls4_6: -2019816321
+      walls4_7: 2127102419
+      walls4_8: 1313170199
+      walls4_9: 1948386138
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
