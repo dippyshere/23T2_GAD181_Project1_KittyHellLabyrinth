@@ -95,7 +95,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bb70c0901def0b44adb5140dd4c240d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
+  speed: 4.5
   target: {fileID: 0}
   deathParticles: {fileID: 1867168237438559539, guid: 947a1b699ffaa7f479973a794b181641, type: 3}
 --- !u!50 &-3020664771093917225

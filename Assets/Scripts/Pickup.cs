@@ -21,6 +21,8 @@ public class Pickup : MonoBehaviour
             {
                 timer.currentTime = timer.totalTime;
 
+                timer.StopAllCoroutines();
+                timer.StartCoroutine(timer.TimerAudio());
                 StartCoroutine(Respawn());
             }
         }

@@ -15,9 +15,13 @@ public class Timer : MonoBehaviour
 
     public PlayerController playerController;
 
+    private AudioSource audioSource;
+    [SerializeField] AudioClip tickSound;
+
     private void Start()
     {
         playerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
+        audioSource = GetComponent<AudioSource>();
         // Start the timer
         StartTimer();
     }
@@ -44,36 +48,47 @@ public class Timer : MonoBehaviour
         {
             case 0:
                 timerImage.sprite = timerSprites[0];
+                audioSource.volume = 1f;
                 break;
             case 1:
                 timerImage.sprite = timerSprites[1];
+                audioSource.volume = 1f;
                 break;
             case 2:
                 timerImage.sprite = timerSprites[2];
+                audioSource.volume = 0.9f;
                 break;
             case 3:
                 timerImage.sprite = timerSprites[3];
+                audioSource.volume = 0.8f;
                 break;
             case 4:
                 timerImage.sprite = timerSprites[4];
+                audioSource.volume = 0.7f;
                 break;
             case 5:
                 timerImage.sprite = timerSprites[5];
+                audioSource.volume = 0.6f;
                 break;
             case 6:
                 timerImage.sprite = timerSprites[6];
+                audioSource.volume = 0.5f;
                 break;
             case 7:
                 timerImage.sprite = timerSprites[7];
+                audioSource.volume = 0.4f;
                 break;
             case 8:
                 timerImage.sprite = timerSprites[8];
+                audioSource.volume = 0.3f;
                 break;
             case 9:
                 timerImage.sprite = timerSprites[9];
+                audioSource.volume = 0.2f;
                 break;
             case 10:
                 timerImage.sprite = timerSprites[10];
+                audioSource.volume = 0.1f;
                 break;
         }
     }
@@ -82,6 +97,7 @@ public class Timer : MonoBehaviour
     {
         currentTime = totalTime;
         isTimerRunning = true;
+        StartCoroutine(TimerAudio());
     }
 
     private void StopTimer()
@@ -95,5 +111,14 @@ public class Timer : MonoBehaviour
 
         playerController.isGameOver = true;
         Time.timeScale = 0f;
+    }
+
+    public IEnumerator TimerAudio()
+    {
+        while (!playerController.isGameOver)
+        {
+            yield return new WaitForSeconds(1f);
+            audioSource.PlayOneShot(tickSound);
+        }
     }
 }
