@@ -6,21 +6,16 @@ public class EnemySpawner : MonoBehaviour
 {
 
     private Vector3 spawnLocation;
-    [SerializeField] private int enemiesToSpawnStart;
-    [SerializeField] private int enemiesToSpawn = 2;
+    private bool toSpawn = true;
 
     public GameObject enemyPrefab;
+    public GameObject enemySpawnTestPrefab;
     
-    private int wave = 2; // Starts at two as wave 1 is called in Start
+    private int wave = 1; // Starts at two as wave 1 is called in Start
 
     // Start is called before the first frame update
     void Start()
     { 
-        for (int i = 0; i < enemiesToSpawnStart; i++)
-        {
-            spawnLocation = new Vector3(Random.Range(-19, 24), Random.Range(-16, 14), 0);
-            Instantiate(enemyPrefab, spawnLocation, Quaternion.identity);
-        }
         StartCoroutine(SpawnEnemies());
     }
 
@@ -28,12 +23,24 @@ public class EnemySpawner : MonoBehaviour
     {
         while (!GameObject.FindWithTag("Player").GetComponent<PlayerController>().isGameOver)
         {
-            enemiesToSpawn = (int)Mathf.Round((2/3 * wave) + 2);
+            int enemiesToSpawn = Mathf.CeilToInt((2/3f * wave) + 1);
             
             for (int i = 0; i < enemiesToSpawn; i++)
             {
-                spawnLocation = new Vector3(Random.Range(-19, 24), Random.Range(-16, 14), 0);
-                Instantiate(enemyPrefab, spawnLocation, Quaternion.identity);
+                toSpawn = true;
+                while (toSpawn)
+                {
+                    spawnLocation = new Vector3(Random.Range(-19, 24), Random.Range(-16, 14), 0);
+                    EnemySpawnTest enemySpawnTest;
+                    enemySpawnTest = Instantiate(enemySpawnTestPrefab, spawnLocation, Quaternion.identity).GetComponent<EnemySpawnTest>();
+                    yield return 0; // Waits one frame
+                    if (enemySpawnTest.safeToSpawn)
+                    {
+                        Debug.Log(enemySpawnTest.safeToSpawn);
+                        Instantiate(enemyPrefab, spawnLocation, Quaternion.identity).GetComponent<EnemySpawnTest>();
+                        toSpawn = false;
+                    }
+                }
             }
 
             wave++;

@@ -1000,9 +1000,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5dff1cac44acbc4c9896c9f52f4f8ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemiesToSpawnStart: 0
-  enemiesToSpawn: 6
   enemyPrefab: {fileID: 8963846976981844583, guid: f624fb24bc5b0ff47aa23974f2bb20e9, type: 3}
+  enemySpawnTestPrefab: {fileID: 8963846976981844583, guid: 2da441b6e1f3a644eb36068f526e2482, type: 3}
 --- !u!4 &277056023
 Transform:
   m_ObjectHideFlags: 0
