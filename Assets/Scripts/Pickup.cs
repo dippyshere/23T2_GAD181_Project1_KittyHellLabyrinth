@@ -8,9 +8,13 @@ public class Pickup : MonoBehaviour
 
     private bool isActive = true;
 
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip pickup;
+
     private void Start()
     {
         timer = GameObject.FindWithTag("Timer").GetComponent<Timer>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
@@ -23,6 +27,7 @@ public class Pickup : MonoBehaviour
 
                 timer.StopAllCoroutines();
                 timer.StartCoroutine(timer.TimerAudio());
+                audioSource.PlayOneShot(pickup);
                 StartCoroutine(Respawn());
             }
         }
