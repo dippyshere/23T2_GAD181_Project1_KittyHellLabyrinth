@@ -31,7 +31,7 @@ public class Pickup : MonoBehaviour
         isActive = false;
         gameObject.GetComponent<SpriteRenderer>().enabled = false;
 
-        yield return new WaitForSeconds(Random.Range(7, 15));
+        yield return new WaitForSeconds(Random.Range(11, 20));
 
         gameObject.GetComponent<SpriteRenderer>().enabled = true;
         isActive = true;
