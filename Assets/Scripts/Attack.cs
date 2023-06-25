@@ -13,9 +13,13 @@ public class Attack : MonoBehaviour
 
     private PlayerController playerController;
 
+    private AudioSource audioSource;
+    [SerializeField] private AudioClip swordSwoosh;
+
     private void Start()
     {
         playerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -32,6 +36,7 @@ public class Attack : MonoBehaviour
             {
                 enemyCollision.GetComponent<EnemyController>().HandleCollisionWithPlayer();
                 GameObject.FindWithTag("Player").GetComponent<ScoreController>().timeAlive += 5f; // Increases player score upon enemy kill
+                audioSource.PlayOneShot(swordSwoosh);
             }
         }
     }
