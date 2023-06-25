@@ -95,5 +95,10 @@ public class PlayerController : MonoBehaviour
             takeDamage();
             collision.gameObject.GetComponent<EnemyController>().HandleCollisionWithPlayer();
         }
+        else if (collision.gameObject.CompareTag("Projectile") && !this.gameObject.CompareTag("Sword"))
+        {
+            takeDamage();
+            Destroy(collision.gameObject);
+        }
     }
 }

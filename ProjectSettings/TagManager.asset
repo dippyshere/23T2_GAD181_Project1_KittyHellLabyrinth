@@ -9,6 +9,7 @@ TagManager:
   - Pick Up
   - Enemy
   - Sword
+  - Projectile
   layers:
   - Default
   - TransparentFX

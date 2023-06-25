@@ -98,6 +98,8 @@ MonoBehaviour:
   speed: 4.5
   target: {fileID: 0}
   deathParticles: {fileID: 1867168237438559539, guid: 947a1b699ffaa7f479973a794b181641, type: 3}
+  projectile: {fileID: 6703133320693690141, guid: a2926328f3168864e9477853a36a8123, type: 3}
+  maxDistance: 5
 --- !u!50 &-3020664771093917225
 Rigidbody2D:
   serializedVersion: 4

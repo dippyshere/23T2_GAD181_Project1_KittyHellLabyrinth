@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class EnemyController : MonoBehaviour
@@ -9,6 +10,11 @@ public class EnemyController : MonoBehaviour
     private Pathfinding pathfinding;
     private Vector3Int[] path;
     private int currentPathIndex = 0;
+
+    // Projectile attack variables
+    [SerializeField] GameObject projectile;
+    public float maxDistance; // Variable to store how far away the enemy can "see" the player
+    private bool canFire = true;
 
     private void Awake()
     {
@@ -44,6 +50,11 @@ public class EnemyController : MonoBehaviour
                 HandleTargetReached();
             }
         }
+
+        if (Vector2.Distance(transform.position, target.position) <= maxDistance && canFire)
+        {
+            StartCoroutine(ProjectileAttack());
+        }
     }
 
     private void HandleTargetReached()
@@ -75,8 +86,6 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-
-
     public void HandleCollisionWithPlayer()
     {
         // Implement the logic for what happens when the enemy collides with the player
@@ -86,8 +95,6 @@ public class EnemyController : MonoBehaviour
         Instantiate(deathParticles, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
-
-
 
     private void CalculatePath(Vector3Int startPosition, Transform targetTransform)
     {
@@ -99,5 +106,14 @@ public class EnemyController : MonoBehaviour
     {
         path = pathfinding.FindPath(startPosition, targetPosition);
         currentPathIndex = 0;
+    }
+
+    private IEnumerator ProjectileAttack()
+    {
+        canFire = false;
+        Instantiate(projectile, transform.position, Quaternion.identity);
+
+        yield return new WaitForSeconds(Random.Range(3f, 6f));
+        canFire = true;
     }
 }
