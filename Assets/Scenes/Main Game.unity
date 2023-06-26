@@ -1816,7 +1816,7 @@ MonoBehaviour:
   followYAxis: 1
   offset: {x: 0, y: 0, z: -10}
   minTarget: {x: -9.5, y: -12.5, z: -50}
-  maxTarget: {x: 14.5, y: 14.5, z: 50}
+  maxTarget: {x: 14.5, y: 10.5, z: 50}
   targetPosition: {x: 0, y: 0, z: -10}
 --- !u!1 &580572053
 GameObject:
@@ -16781,14 +16781,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1345986573, guid: db2b56a72fbd9224294276aaf30be31f, type: 3}
-      propertyPath: m_SortingOrder
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1345986573, guid: db2b56a72fbd9224294276aaf30be31f, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: efa2ed00cd53eba46a9f5d1be75be1fd, type: 2}
     - target: {fileID: 3996812261141309803, guid: db2b56a72fbd9224294276aaf30be31f, type: 3}
       propertyPath: score
       value: 

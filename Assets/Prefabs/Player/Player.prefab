@@ -57,7 +57,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: efa2ed00cd53eba46a9f5d1be75be1fd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: 75af793f8afc66144bb196d624bc0b2b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -188,11 +188,12 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -0.3414703, y: -0.42967024}
-  - {x: -0.12528013, y: 0.44448644}
+  - {x: -0.66887367, y: -0.44892928}
+  - {x: -0.62418354, y: 0.1793569}
+  - {x: -0.32268506, y: 0.33374706}
   - {x: 0.5990636, y: 0.49314445}
   - {x: 0.4822837, y: -0.43288466}
-  - {x: -0.34501433, y: -0.43954766}
+  - {x: -0.64834386, y: -0.4443624}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
