@@ -11,15 +11,9 @@ public class PlayMusicOnStart : MonoBehaviour
 
     private AudioSource audioSource;
 
-    private void Start()
+    private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
-
-        // Set the menu music clip
-        audioSource.clip = menuMusic;
-
-        // Play the menu music
-        audioSource.Play();
     }
 
     private void OnEnable()
